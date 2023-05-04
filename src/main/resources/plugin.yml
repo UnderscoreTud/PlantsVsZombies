@@ -1,0 +1,8 @@
+name: Plantszombies
+version: '${version}'
+main: me.tud.plantszombies.PlantsZombies
+api-version: 1.16
+authors: [ _tud ]
+description: Plants vs Zombies ogmomgogm
+commands:
+  test:
