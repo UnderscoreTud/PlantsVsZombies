@@ -1,15 +1,12 @@
 package me.tud.plantszombies.core.zombies;
 
 import lombok.Getter;
-import lombok.Setter;
 import me.tud.plantszombies.core.Cell;
 import me.tud.plantszombies.core.DamageableObject;
 import me.tud.plantszombies.core.Game;
-import me.tud.plantszombies.core.GameObject;
 import me.tud.plantszombies.core.types.ZombieType;
 import me.tud.plantszombies.utils.EntityUtils;
 import org.bukkit.Location;
-import org.bukkit.Sound;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Mob;
 
@@ -54,6 +51,7 @@ public abstract class Zombie extends DamageableObject {
 
     private org.bukkit.entity.Zombie spawnZombie(Location location) {
         return EntityUtils.spawnZombie(location, zombie -> {
+            zombie.setNoDamageTicks(0);
             if (type.getHatSupplier() != null)
                 zombie.getEquipment().setHelmet(type.getHatSupplier().get());
         });

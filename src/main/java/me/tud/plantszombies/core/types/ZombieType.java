@@ -1,8 +1,11 @@
 package me.tud.plantszombies.core.types;
 
 import lombok.Getter;
-import me.tud.plantszombies.core.zombies.NormalZombie;
+import me.tud.plantszombies.core.zombies.BasicZombie;
+import me.tud.plantszombies.core.zombies.BucketZombie;
+import me.tud.plantszombies.core.zombies.ConeZombie;
 import me.tud.plantszombies.core.zombies.Zombie;
+import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
@@ -11,7 +14,9 @@ import java.util.function.Supplier;
 @Getter
 public enum ZombieType {
 
-    ZOMBIE(10, 1, 0.5, 0.5, null, NormalZombie::new)
+    ZOMBIE(10, 1, 0.5, 0.5, null, BasicZombie::new),
+    CONE_ZOMBIE(30, 1, 0.5, 0.5, () -> new ItemStack(Material.GOLDEN_HELMET), ConeZombie::new),
+    BUCKET_ZOMBIE(65, 1, 0.5, 0.5, () -> new ItemStack(Material.IRON_HELMET), BucketZombie::new),
     ;
 
     private final int maxHealth, damage;

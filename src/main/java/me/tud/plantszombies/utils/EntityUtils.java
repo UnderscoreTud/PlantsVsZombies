@@ -30,7 +30,7 @@ public final class EntityUtils {
     }
 
     public static Zombie spawnZombie(Location location, @Nullable Consumer<Zombie> consumer) {
-        return location.getWorld().spawn(location, Zombie.class, zombie -> {
+        return location.getWorld().spawn(location, Zombie.class, false, zombie -> {
             zombie.setPersistent(true);
             zombie.setCollidable(false);
             zombie.setShouldBurnInDay(false);

@@ -2,10 +2,8 @@ package me.tud.plantszombies.core.plants;
 
 import lombok.Getter;
 import me.tud.plantszombies.core.Cell;
-import me.tud.plantszombies.core.GameObject;
 import me.tud.plantszombies.core.types.PlantType;
 import me.tud.plantszombies.core.zombies.Zombie;
-import org.bukkit.entity.Player;
 import org.bukkit.util.RayTraceResult;
 
 @Getter
@@ -15,7 +13,7 @@ public abstract class ShooterPlant extends Plant {
 
     private final int range;
     private final int fireRateTicks;
-    private int coolDownTicks = 0;
+    protected int coolDownTicks = 0;
 
     public ShooterPlant(PlantType type, double fireRate, int range) {
         super(type);

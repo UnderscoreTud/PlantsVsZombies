@@ -14,6 +14,7 @@ import java.util.function.Consumer;
 public enum PlantType {
 
     PEASHOOTER(100, 7.5, 6, armorStand -> armorStand.setCustomName(ChatUtils.colored("&e&lPeashooter"))),
+    REPEATER(200, 7.5, 6, armorStand -> armorStand.setCustomName(ChatUtils.colored("&e&lRepeater"))),
     ;
 
     private final int cost;

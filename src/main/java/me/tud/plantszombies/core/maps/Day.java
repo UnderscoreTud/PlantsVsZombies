@@ -14,8 +14,19 @@ import java.util.Map;
 
 public class Day extends GameMap {
 
-    public Day(Game game, World world) {
-        super(game, world, new ZombieSpawner(game, Map.of(ZombieType.ZOMBIE, 1)));
+    @SuppressWarnings("unchecked")
+    private static final Map<ZombieType, Long>[][] spawners = new Map[][]{
+            {
+                Map.of(ZombieType.ZOMBIE, 10L)
+            },
+            {
+                Map.of(ZombieType.ZOMBIE, 10L),
+                Map.of(ZombieType.CONE_ZOMBIE, 5L)
+            }
+    };
+
+    public Day(Game game, World world, int level) {
+        super(game, world, spawners[level]);
     }
 
     @Override
